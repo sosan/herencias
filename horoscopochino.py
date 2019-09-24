@@ -37,15 +37,15 @@ def run():
         completado = False
 
         while completado == False:
-            ano = int(input("Introduce el año que naciste: "))
-            anoInit = 1912
-            if (ano <= 0):
+            añoNacimiento = int(input("Introduce el año que naciste: "))
+
+            if (añoNacimiento < 1900):
                 pass
             else:
                 count = 1
-                # mejor usar el ano % len(HOROSCOPO)
-                for i in range(1900, ano):
-                    if ano == i:
+                # mejor usar el añoNacimiento % len(HOROSCOPO)
+                for i in range(1900, añoNacimiento):
+                    if añoNacimiento == i:
                         # completado = True
                         break;
 
