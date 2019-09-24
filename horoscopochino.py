@@ -11,6 +11,7 @@ HOROSCOPO CHINO
 # MOCKUP EN WEB MOCKUP FLASK
 
 import os
+import sys
 
 HOROSCOPO = {
     1: "Rata",
@@ -30,7 +31,7 @@ HOROSCOPO = {
 
 
 def run():
-    os.system("cls")
+
 
     try:
         completado = False
@@ -42,23 +43,30 @@ def run():
                 pass
             else:
                 count = 1
-
-                for i in range(1912, ano):
+                # mejor usar el ano % len(HOROSCOPO)
+                for i in range(1900, ano):
                     if ano == i:
                         # completado = True
                         break;
 
-                    # print("count=>{0}".format(count))19
                     count += 1
-                    if count >= 12:
-                        count = 0
+                    if count > 12:
+                        count = 1
 
-                print("ERES DEL HOROSCOPO " + HOROSCOPO[count])
+
+
+                if count in HOROSCOPO:
+                    print("ERES DEL HOROSCOPO " + HOROSCOPO[count])
+                else:
+                    print("no ta en horoscopo")
+                    raise ValueError
 
     except ValueError:
+        print("ERrror VALOR")
         run()
 
 
 # punot inicial
 if __name__ == '__main__':
+    os.system("cls")
     run()
