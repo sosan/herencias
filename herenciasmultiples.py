@@ -1,0 +1,7 @@
+"""
+HERENCIAS MULTIPLES
+
+"""
+import herencias
+
+

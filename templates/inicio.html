@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block  title %}
+{{ super() }}
+Introducir Año Nacimiento
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="form">
+ <form action="/" method="post">
+     {{ datos["formulario"]["ano"](class="form-control", placeholder="Año Nacimiento")}}
+     {{ datos["formulario"]["botonEnviar"](class="btn btn-default btn-register")}}
+
+</form>
+</div>
+
+
+{% endblock %}
